@@ -33,5 +33,21 @@ A puzzle game built with **HTML**, **CSS**, and **Vanilla JavaScript** where pla
 - ✨ Beautiful and user-friendly interface
 
 ---
+## 🎨 Screenshots
 
+### 🏴 Game Start
+<img src="screenshots/game-start.png" width="400"/>
+
+
+### 🌫️ How The Easy puzzle Looks Like
+<img src="screenshots/easy_game.png" width="400"/>
+
+### 🏆 Win Screen
+<img src="screenshots/correct-path.png" width="400"/>
+
+### 🏆 Lost Screen
+<img src="screenshots/wrong-path.png" width="400"/>
+
+### 🏅 Leaderboard Screen
+<img src="screenshots/leaderboard.png" width="400"/>
 
