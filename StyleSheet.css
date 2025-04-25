@@ -1,0 +1,346 @@
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 10px 15px 10px 15px;
+  font-family: Arial, sans-serif;
+  background-color: #c7c3b7;
+}
+
+h1 {
+  font-size: 70px;
+  color: #a79d78;
+  text-shadow: 2px 2px 0px #2e2306, 4px 4px 0px #b5a977;
+  margin-bottom: 15px;
+}
+
+.page {
+  width: 700px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.inactive {
+  display: none;
+}
+
+#menu h1 {
+  margin-bottom: 40px;
+}
+
+#menu #username {
+  width: 100%;
+  padding: 15px;
+  font-size: 16px;
+  border: 2.2px solid #e8983c;
+  border-radius: 10px;
+  font-weight: bold;
+  box-sizing: border-box;
+}
+
+#menu ::placeholder {
+  color: #b78b3a;
+}
+
+#menu .difficulty-container {
+  box-sizing: border-box;
+  width: 100%;
+  text-align: center;
+  border: 2.2px solid #a1c25b;
+  padding: 5px;
+  border-radius: 10px;
+  background-color: #f9f8f4;
+}
+
+#menu .difficulty-container h3 {
+  font-size: 18px;
+  color: #c8d3b0;
+}
+
+#menu .difficulty-labels {
+  display: flex;
+  justify-content: space-around;
+}
+
+#menu button {
+  cursor: pointer;
+  font-size: 16px;
+  padding: 15px 30px;
+  border: 2px solid #6e8b2f;
+  border-radius: 8px;
+  background-color: beige;
+}
+
+#menu .easy_button {
+  color: #3d405b;
+}
+#menu .easy_button:hover {
+  background-color: #6e8b2f;
+  color: #2e3a4a; 
+}
+
+#menu .hard_button {
+  color: #3d405b;
+}
+#menu .hard_button:hover {
+  background-color:  #6e8b2f;
+  color: #2e3a4a; 
+}
+#menu .selectedLevel {
+  background-color: rgb(201, 234, 180);
+}
+#menu .difficulty-labels p {
+  font-size: 12px;
+  color: #788e44;
+  font-weight: bold;
+}
+
+#menu .rules-start-container {
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+#menu .rules-button {
+  background-color: #eaf0dc;
+  color: #3d405b;
+  border: 1px solid #b5ca87;
+}
+
+#menu .save-button {
+  background-color: #eaf0dc;
+  color: #3d405b;
+  border: 1px solid #b5ca87;
+}
+#menu .save-button:hover {
+  background-color: #6e8b2f;
+
+  color: #2e3a4a; 
+}
+
+#menu .rules-button:hover {
+  background-color: #6e8b2f;
+  color: #2e3a4a; 
+}
+#menu .start-button {
+  background-color: #b5b9a3;
+  color: #3d405b;
+  border: none;
+}
+#menu .start-button:hover {
+  background-color: #6e8b2f; 
+  color: #2e3a4a; 
+}
+
+#menu .leaderboard-button {
+  background-color: #ced7b9;
+  color: #3d405b;
+  border: 1px solid #a1c25b; 
+  padding: 8px 16px;
+  font-size: 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+#menu .leaderboard-button:hover {
+  background-color: #6e8b2f; 
+  color: #2e3a4a; 
+}
+#game .game_container {
+  text-align: left;
+  border: 2.2px solid #a1c25b;
+  border-radius: 8px;
+  padding: 10px;
+  background-color: #f7f8f4;
+  box-sizing: border-box;
+  width: 100%;
+}
+
+#game .label {
+  font-size: 18px;
+  color: #b5a977;
+  font-weight: bold;
+}
+
+#game .line {
+  color: #b5a977;
+}
+
+#game .map_container {
+  display: grid;
+  gap: 2px;
+}
+
+#game .horizontal-buttons {
+  display: flex;
+  justify-content: space-evenly;
+  width: 100%;
+}
+#game .restart-button {
+  cursor: pointer;
+  font-size: 16px;
+  padding: 15px 30px;
+  border: 2px solid #6e8b2f;
+  border-radius: 8px;
+  background-color: beige;
+}
+
+#game .finish-button {
+  cursor: pointer;
+  font-size: 16px;
+  padding: 15px 30px;
+  border: 2px solid #6e8b2f;
+  border-radius: 8px;
+  background-color: rgb(201, 234, 180);
+}
+
+.status {
+  padding: 15px 25px;
+  border-radius: 8px;
+  color: white;
+  font-weight: bold;
+  font-family: Arial, sans-serif;
+  font-size: 18px;
+  background-color: rgba(0, 0, 0, 0.8);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+
+  text-align: center;
+  align-items: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-top: -40px;
+  margin-left: -60px;
+  width: 15%;
+  height: 10%;
+}
+
+.status.show {
+  text-align: center;
+  opacity: 1;
+  visibility: visible;
+  display: block;
+}
+
+.status.success {
+  background-color: green;
+}
+
+.status.error {
+  background-color: red;
+}
+
+
+#rules {
+  background-color: #f9f8f4;
+  border: 2.2px solid #a1c25b;
+  border-radius: 10px;
+  padding: 20px;
+  width: 600px;
+  margin: auto;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  text-align: left;
+  font-family: Arial, sans-serif;
+}
+
+#rules h1 {
+  font-size: 24px;
+  color: #a79d78;
+  margin-bottom: 20px;
+  text-shadow: 1px 1px 0px #2e2306, 2px 2px 0px #b5a977;
+}
+
+#rules h2 {
+  color: #788e44;
+  font-weight: bold;
+  font-size: 16px;
+  margin-top: 15px;
+  text-transform: uppercase;
+}
+
+#rules .back-button {
+  background-color: beige;
+  color: #638115;
+  border: 2px solid #6e8b2f;
+  padding: 8px 16px;
+  font-size: 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+#rules .back-button:hover {
+  background-color: #eaf0dc;
+  color: #3d405b;
+}
+.inactive {
+  display: none;
+}
+
+
+#leaderboard {
+  background-color: #f9f8f4;
+  border: 2.2px solid #a1c25b;
+  border-radius: 10px;
+  padding: 20px;
+  width: 300px;
+  margin: auto;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  font-family: Arial, sans-serif;
+}
+
+#leaderboard h3 {
+  font-size: 24px;
+  color: #a79d78;
+  margin-bottom: 20px;
+  text-shadow: 1px 1px 0px #2e2306, 2px 2px 0px #b5a977;
+}
+
+#leaderboardContent {
+  margin-bottom: 20px;
+}
+
+#leaderboardContent div p {
+  color: #788e44;
+  font-weight: bold;
+  font-size: 16px;
+  margin-top: 15px;
+  text-transform: uppercase;
+}
+
+#leaderboardContent .leader {
+  font-size: 18px;
+  color: #3d405b;
+  margin: 5px 0;
+}
+
+#leaderboardContent .no-leaders {
+  color: #b78b3a;
+  font-size: 16px;
+  margin-top: 10px;
+}
+
+#backToMenuButton {
+  background-color: beige;
+  color: #638115;
+  border: 2px solid #6e8b2f;
+  padding: 8px 16px;
+  font-size: 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+#backToMenuButton:hover {
+  background-color: #eaf0dc;
+  color: #3d405b;
+}

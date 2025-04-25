@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>RAILWAYS</title>
+
+    <link rel="stylesheet" href="StyleSheet.css" />
+    <script src="play.js" defer></script>
+  </head>
+  <body>
+    <div id="menu" class="page">
+      <h1>RAILWAYS</h1>
+      <input type="text" id="username" placeholder="WHO ARE YOU?" />
+      <p id="error-message" style="color: red; display: none;">Please enter your name to start the game!</p>
+
+      <div class="difficulty-container">
+        <h3>SET THE DIFFICULTY!</h3>
+        <div class="difficulty-labels">
+          <div class="easy selected">
+            <button class="easy_button selectedLevel">5 X 5</button>
+            <p>EASY</p>
+          </div>
+          <div class="hard">
+            <button class="hard_button">7 X 7</button>
+            <p>HARD</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="rules-start-container">
+        <button class="rules-button">RULES</button>
+        <button class="leaderboard-button">LEADERBOARD</button>
+        <button class="save-button">LAST SAVED GAME</button>
+        <button class="start-button">START GAME</button>
+      </div>
+
+      
+    </div>
+
+    <div id="game" class="page inactive">
+      <h1>RAILWAYS</h1>
+      <div class="game_container">
+        <p class="label">ROUTE DESIGNER:</p>
+        <p class="name"></p>
+        <p class="line">-------------------</p>
+        <p class="label">ELAPSED TIME:</p>
+        <p class="time">00:00</p>
+      </div>
+      <div class="horizontal-buttons">
+        <button class="finish-button">FINISH</button>
+        <button class="restart-button">RESTART</button>
+      </div>
+      <div class="map_container">
+      </div>
+    </div>
+
+    <div id="gameStatus" class="status">
+      <span id="statusText">You Won!</span>
+    </div>
+    
+
+    <div id="leaderboard" class="leaderboard inactive">
+      <h3>Leaderboard</h3>
+      <div id="leaderboardContent"></div>
+      <button id="backToMenuButton" class="back-button">Back to Menu</button>
+    </div>
+
+    <div id="rules" class="inactive">
+      <div class="container">
+        <button class="back-button">BACK TO MENU</button>
+        <h1>Game Description</h1>
+      </div>
+            <h2>Map Setup :</h2>
+
+              The game takes place on a square grid, which varies in size depending on the difficulty:
+              <br>
+              Easy: 5x5 grid
+              <br>
+              Hard: 7x7 grid
+              <br>
+              Different types of terrain tiles appear on the map:
+              <ul>
+                
+                <li>Empty Tile: Allows railway construction in any of the three directions, except for the entry direction.</li>
+                <li>Bridge: The railway can only be built in a straight line across the bridge.</li>
+                <li>Mountain: Blocks two exits, so the train can only turn 90°.</li>
+                <li>Oasis: Cannot support railway construction.</li>
+              </ul>
+              <h2>Building the Railway</h2>
+
+              Place railway tracks to connect tiles according to the terrain rules:
+
+              <ul>
+                <li>The railway must not cross over itself or loop back to any cell.</li>
+                <li>The train can only pass through each cell once.</li>
+              
+              </ul>
+
+              Choose how you want to place and manage tracks:
+
+              <ul>
+                <li>Clicking on cells: Cycle through available track types.</li>
+                <li> Right-click options: Rotate or delete placed tracks.</li>
+                <li>Drag and Draw  Hold down the mouse to draw tracks across cells.</li>
+              
+              </ul>
+              
+             
+              
+              <h2>Game Interface</h2>
+
+              When the game starts, the main menu appears:
+              <ul>
+                <li>Enter your Name: This will personalize your experience.</li>
+                <li>Select Map Difficulty: Choose between Easy and Hard.</li>
+                <li>You can also view the game description in the menu.</li>
+              
+              </ul>
+   
+              <h2>End of the Game</h2>
+              The game ends when the player correctly completes the puzzle according to
+              the given rules. During the validation of the puzzle's completion, the
+              following elements need to be checked:
+              <ul>
+                <li>
+                  Each cell has two exit points, and the train can enter each
+                  neighboring cell from the correct direction.
+                </li>
+                <li>Every cell that needs to be touched is touched.</li>
+                <li>Every cell where no track can be placed remains empty.</li>
+              </ul>
+    </div>
+  </body>
+</html>
